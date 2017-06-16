@@ -1,0 +1,7 @@
+<view class="classname">
+
+<view wx:for="{{MessageList}}">
+<view>{{name}}</view>
+<view>{{content}}</view>
+</view>
+</view>

@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/message/message",
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/index/pages/view/view",
+    "pages/index/pages/scroll-view/scroll-view",
+    "pages/index/pages/swiper/swiper",
+    "pages/index/pages/text/text",
+    "pages/index/pages/icon/icon",
+    "pages/index/pages/progress/progress",
+    "pages/index/pages/button/button",
+    "pages/index/pages/checkbox/checkbox",
+    "pages/index/pages/form/form",
+    "pages/index/pages/input/input",
+    "pages/index/pages/label/label",
+    "pages/index/pages/picker/picker",
+    "pages/index/pages/radio/radio",
+    "pages/index/pages/slider/slider",
+    "pages/index/pages/switch/switch",
+    "pages/index/pages/textarea/textarea",
+    "pages/index/pages/navigator/navigator",
+    "pages/index/pages/navigator/navigate",
+    "pages/index/pages/navigator/redirect",
+    "pages/index/pages/image/image",
+    "pages/index/pages/audio/audio",
+    "pages/index/pages/video/video",
+    "pages/index/pages/map/map",
+    "pages/index/pages/canvas/canvas"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "BIM-STAR",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/project/project.png",
+        "selectedIconPath": "image/project/project_selected.png",
+        "text": "项目"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "image/project/message.png",
+        "selectedIconPath": "image/project/message_selected.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "image/project/personal.png",
+        "selectedIconPath": "image/project/personal_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 5000
+  },
+  "debug": true
+}

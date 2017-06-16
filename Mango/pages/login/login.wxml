@@ -1,0 +1,9 @@
+ <view class="section">
+  <input placeholder="账号" value="{{userName}}"  auto-focus/>
+  </view>
+  <view class="section">
+  <input placeholder="密码" value="{{password}}"  password="true" >{{}}</input>
+  </view>
+    <view class="btn-area">
+    <button  bindtap="submitLogin">登录</button>
+  </view>
