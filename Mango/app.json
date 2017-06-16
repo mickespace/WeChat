@@ -5,6 +5,7 @@
     "pages/personal/personal",
     "pages/login/login",
     "pages/logs/logs",
+	
     "pages/index/pages/view/view",
     "pages/index/pages/scroll-view/scroll-view",
     "pages/index/pages/swiper/swiper",
