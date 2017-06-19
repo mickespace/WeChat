@@ -1,4 +1,5 @@
 
+  
 <view wx:for="{{MessageList}}" wx:key="Name">
   <view class="page-body">
     <view class="page-section">
@@ -14,6 +15,6 @@
       </view>
     </view>
   </view>
-
 </view>
-<input  type="button" onclick="Refesh" >shabi</input>
+
+  <button  bindtap="datarefesh">执行一个傻逼方法</button>

@@ -6,6 +6,13 @@ Page({
   submitLogin: function () {
     var name = this.data.userName;
     var pwd = this.data.password
+    wx:wx.showLoading({
+      title: '处理一些事情....',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     wx.request({
       url: 'http://192.168.10.100:19432/api/v1/user/login',
       data: {
@@ -22,7 +29,7 @@ Page({
         //写入到数据中
         wx.setStorage({
           key: 'userInfo',
-          data: successData.Data,
+          data: [{UserName:name},{Password:pwd}],
         })
         //提示成功
         wx.showToast({
@@ -30,7 +37,6 @@ Page({
           icon: 'success',
           duration: 5000
         })
-        wx.set
         wx.reLaunch({
           url: '/pages/index/index',
         })
@@ -38,7 +44,7 @@ Page({
       fail: function (failres) {
         let tiperr = JSON.stringify(failres);
         wx.showToast({
-          title: '出现错误了，大傻逼' + failres.errMsg,
+          title: 'denglu' + failres.errMsg,
           icon: 'fail',
           duration: 5000
         })

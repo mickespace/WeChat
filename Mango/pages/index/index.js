@@ -50,10 +50,60 @@ Page({
       list: list
     });
   },
-  onShow:function(){
+  onLoad:function(){
     let user = wx.getStorage({
       key: 'userInfo',
       success: function (res) {
+        wx.request({
+          url: 'http://192.168.10.100:19432/api/v1/user/login',
+          data: {
+            appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
+            userName: '13642520884', 
+            password: '123456'
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (userres) {
+            //解析获取出来的信息
+            let userresDATA = userres.data;
+            //提示成功
+            wx.setStorage({
+              key: 'userInfo',
+              data: [{ UserName: '13642520884' }, { Password: '123456' }],
+            })
+            //usertoken
+            wx.request({
+              url: 'http://192.168.10.100:19432/api/v1/user/token',
+              data: {
+                appKey: '908F0991-0E14-484F-91E7-DAAF0F4B2A37',
+                TokenKey: userresDATA.Data.TokenKey,
+              },
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function (kenRes) {
+                wx.setStorage({
+                  key: 'userToken',
+                  data: kenRes.data.Data.UserToken,
+                })
+                wx.showToast({
+                  title: 'UserToken \n' + kenRes.data.Data.UserToken,
+                  icon: 'success',
+                  duration: 5000
+                })
+              }
+            })
+          },
+          fail: function (failres) {
+            let tiperr = JSON.stringify(failres);
+            wx.showToast({
+              title: '项目' + failres.errMsg,
+              icon: 'fail',
+              duration: 5000
+            })
+          }
+        })
       },
       fail: function () {
         wx.redirectTo({
